@@ -6,4 +6,4 @@ využítí sharedpreferences<br/>
         GUI (listy, tlačítka, switche apod.)<br/>
         databáze<br/>
         časovač<br/>
-        more..<br/>
+        a dalšího..<br/>
