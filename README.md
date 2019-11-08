@@ -1,9 +1,9 @@
 # Millionaire
-projekt_TAMZ2 - Dominik Holaň
-Quizová hra ve stylu milionář
-využítí sharedpreferences
-        audia a zvuků
-        GUI (listy, tlačítka, switche apod.)
-        databáze
-        časovač
-        more..
+projekt_TAMZ2 - Dominik Holaň<br/>
+Quizová hra ve stylu milionář<br/>
+využítí sharedpreferences<br/>
+        audia a zvuků<br/>
+        GUI (listy, tlačítka, switche apod.)<br/>
+        databáze<br/>
+        časovač<br/>
+        more..<br/>
