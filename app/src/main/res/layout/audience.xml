@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="2"
+        android:background="@drawable/button_background_main"
+        android:text="zpět"
+        android:textColor="#fff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/A"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/button_background_main"
+        android:gravity="center"
+        android:text="A"
+        android:textColor="#fff"
+        android:textSize="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Asloupec" />
+
+    <TextView
+        android:id="@+id/B"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/button_background_main"
+        android:gravity="center"
+        android:text="B"
+        android:textColor="#fff"
+        android:textSize="30dp"
+        app:layout_constraintStart_toEndOf="@+id/A"
+        app:layout_constraintTop_toBottomOf="@+id/Bsloupec" />
+
+    <TextView
+        android:id="@+id/C"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/button_background_main"
+        android:gravity="center"
+        android:text="C"
+        android:textColor="#fff"
+        android:textSize="30dp"
+        app:layout_constraintStart_toEndOf="@+id/B"
+        app:layout_constraintTop_toBottomOf="@+id/Csloupec" />
+
+    <TextView
+        android:id="@+id/D"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/button_background_main"
+        android:gravity="center"
+        android:text="D"
+        android:textColor="#fff"
+        android:textSize="30dp"
+        app:layout_constraintStart_toEndOf="@+id/C"
+        app:layout_constraintTop_toBottomOf="@+id/Dsloupec" />
+
+    <ImageView
+        android:id="@+id/Asloupec"
+        android:layout_width="74dp"
+        android:layout_height="444dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/sloupec3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ok" />
+
+    <ImageView
+        android:id="@+id/Bsloupec"
+        android:layout_width="74dp"
+        android:layout_height="444dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/sloupec2"
+        app:layout_constraintStart_toEndOf="@+id/Asloupec"
+        app:layout_constraintTop_toBottomOf="@+id/ok" />
+
+    <ImageView
+        android:id="@+id/Csloupec"
+        android:layout_width="74dp"
+        android:layout_height="444dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/sloupec1"
+        app:layout_constraintStart_toEndOf="@+id/Bsloupec"
+        app:layout_constraintTop_toBottomOf="@+id/ok" />
+
+    <ImageView
+        android:id="@+id/Dsloupec"
+        android:layout_width="74dp"
+        android:layout_height="444dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="116dp"
+        android:src="@drawable/spravnysloupec"
+        app:layout_constraintStart_toEndOf="@+id/Csloupec"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
