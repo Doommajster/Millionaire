@@ -19,7 +19,7 @@ import android.widget.Switch;
 
 public class Menu extends Activity {
 
-    private Button startGame,about;
+    private Button startGame,about,highScore;
     private ImageView logo;
     MediaPlayer player;
     SharedPreferences sharedPreferences;
@@ -48,7 +48,16 @@ public class Menu extends Activity {
         about.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(v.getContext(), com.example.domin.tamz_ukol_4.about.class);
+                Intent intent = new Intent(v.getContext(), about.class);
+                startActivity(intent);
+            }
+        });
+
+        highScore=findViewById(R.id.high_score);
+        highScore.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(v.getContext(), SqlScore.class);
                 startActivity(intent);
             }
         });

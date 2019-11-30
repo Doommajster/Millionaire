@@ -21,6 +21,7 @@
         <activity android:name="com.example.domin.tamz_ukol_4.Audience" />
         <activity android:name="com.example.domin.tamz_ukol_4.Telefon" />
         <activity android:name="com.example.domin.tamz_ukol_4.end" />
+        <activity android:name="com.example.domin.tamz_ukol_4.SqlScore" />
     </application>
 
 </manifest>

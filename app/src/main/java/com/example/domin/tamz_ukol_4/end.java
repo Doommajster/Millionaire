@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Calendar;
+
 public class end extends Activity {
 
     TextView win;
@@ -45,6 +47,8 @@ public class end extends Activity {
         }
         else if(score != 0 && score!=1000000){
             win.setText("Gratuluji vyhrál si: " +score+ " Kč");
+            Sqldatabase SQL = new Sqldatabase(this);
+            SQL.addScore(score,""+ Calendar.getInstance().getTime());
             if (sharedPreferences.getString("zvuk", "").equals("ok")) {
 
                 player.start();
@@ -52,6 +56,8 @@ public class end extends Activity {
         }
         else if(score==1000000){
             win.setText("Stáváš se novým milionářem!!");
+            Sqldatabase SQL = new Sqldatabase(this);
+            SQL.addScore(score,""+ Calendar.getInstance().getTime());
             if (sharedPreferences.getString("zvuk", "").equals("ok")) {
 
                 player.start();
