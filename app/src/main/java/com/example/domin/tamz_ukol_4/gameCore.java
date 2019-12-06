@@ -19,9 +19,12 @@ import java.util.Random;
 
 public class gameCore extends Activity {
 
-    public String[] otazky_easy=new otazky().getOtazky_easy();
-    public String[] otazky_medium=new otazky().getOtazky_medium();
-    public String[] otazky_hard=new otazky().getOtazky_hard();
+    public String[] otazky_easy=otazky.otazky.getOtazky_easy();
+    public Integer[] odpovedi_easy=otazky.otazky.getOdpovedi_easy();
+    public String[] otazky_medium=otazky.otazky.getOtazky_medium();
+    public Integer[] odpovedi_medium=otazky.otazky.getOdpovedi_medium();
+    public String[] otazky_hard=otazky.otazky.getOtazky_hard();
+    public Integer[] odpovedi_hard=otazky.otazky.getOdpovedi_hard();
     public Integer[] money={500,1000,2000,5000,10000,25000,50000,100000,250000,500000,750000,1000000};
 
     private Button a,b,c,d;
@@ -44,6 +47,7 @@ public class gameCore extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gamecore);
         player = MediaPlayer.create(this, R.raw.starthry);
+        Log.d("asdfdsa",otazky.otazky.getOtazky_easy()[0]);
         a=findViewById(R.id.button1);
         b=findViewById(R.id.button2);
         c=findViewById(R.id.button3);
@@ -58,7 +62,7 @@ public class gameCore extends Activity {
             @Override
             public void onClick(final View v){
                 Handler handler = new Handler();
-                if(spravnaOdpoved==randomCislo+1){
+                if(spravnaOdpoved==1){
                     if(score==1000000){
                         a.setBackground(getDrawable(R.drawable.greenbackground));
 
@@ -122,7 +126,9 @@ public class gameCore extends Activity {
                                 player.stop();
                                 CDT.cancel();
                                 Intent i = new Intent(v.getContext(), end.class);
-                                i.putExtra("score", -1);
+                                if(score >=5000 && score <100000) i.putExtra("score", 5000);
+                                else if (score >=100000 && score <=1000000) i.putExtra("score", 100000);
+                                else i.putExtra("score",-1);
                                 startActivity(i);
                             }
                         }
@@ -137,7 +143,7 @@ public class gameCore extends Activity {
             @Override
             public void onClick(final View v){
                 Handler handler = new Handler();
-                if(spravnaOdpoved==randomCislo+2){
+                if(spravnaOdpoved==2){
                     if(score==1000000){
                         b.setBackground(getDrawable(R.drawable.greenbackground));
 
@@ -199,7 +205,9 @@ public class gameCore extends Activity {
                                 player.stop();
                                 CDT.cancel();
                                 Intent i = new Intent(v.getContext(), end.class);
-                                i.putExtra("score", -1);
+                                if(score >=5000 && score <100000) i.putExtra("score", 5000);
+                                else if (score >=100000 && score <=1000000) i.putExtra("score", 100000);
+                                else i.putExtra("score",-1);
                                 startActivity(i);
                             }
                         }
@@ -213,7 +221,7 @@ public class gameCore extends Activity {
             @Override
             public void onClick(final View v){
                 Handler handler = new Handler();
-                if(spravnaOdpoved==randomCislo+3){
+                if(spravnaOdpoved==3){
                     if(score==1000000){
                         c.setBackground(getDrawable(R.drawable.greenbackground));
 
@@ -276,7 +284,9 @@ public class gameCore extends Activity {
                                 player.stop();
                                 CDT.cancel();
                                 Intent i = new Intent(v.getContext(), end.class);
-                                i.putExtra("score", -1);
+                                if(score >=5000 && score <100000) i.putExtra("score", 5000);
+                                else if (score >=100000 && score <=1000000) i.putExtra("score", 100000);
+                                else i.putExtra("score",-1);
                                 startActivity(i);
                             }
                         }
@@ -290,7 +300,7 @@ public class gameCore extends Activity {
             @Override
             public void onClick(final View v){
                 Handler handler = new Handler();
-                if(spravnaOdpoved==randomCislo+4){
+                if(spravnaOdpoved==4){
                     if(score==1000000){
                         d.setBackground(getDrawable(R.drawable.greenbackground));
 
@@ -354,7 +364,9 @@ public class gameCore extends Activity {
                                 player.stop();
                                 CDT.cancel();
                                 Intent i = new Intent(v.getContext(), end.class);
-                                i.putExtra("score", -1);
+                                if(score >=5000 && score <100000) i.putExtra("score", 5000);
+                                else if (score >=100000 && score <=1000000) i.putExtra("score", 100000);
+                                else i.putExtra("score",-1);
                                 startActivity(i);
                             }
                         }
@@ -422,7 +434,9 @@ public class gameCore extends Activity {
                 Context context = this;
                 player.stop();
                 Intent i = new Intent(context,end.class);
-                i.putExtra("score", -1);
+                if(score >=5000 && score <100000) i.putExtra("score", 5000);
+                else if (score >=100000 && score <=1000000) i.putExtra("score", 100000);
+                else i.putExtra("score",-1);
                 startActivity(i);
             }
         }
@@ -443,7 +457,7 @@ public class gameCore extends Activity {
                                                     else{
 
                                                         Intent intent2=new Intent(v.getContext(),Audience.class);
-                                                        intent2.putExtra("spravna",spravnaOdpoved%6);
+                                                        intent2.putExtra("spravna",spravnaOdpoved);
                                                         publikum.setImageResource(R.drawable.nopublikum);
                                                         startActivityForResult(intent2,330);
                                                         publikumB=true;
@@ -468,7 +482,7 @@ public class gameCore extends Activity {
 
 
                                                     Intent intent3=new Intent(v.getContext(),Telefon.class);
-                                                    intent3.putExtra("spravna",spravnaOdpoved%6);
+                                                    intent3.putExtra("spravna",spravnaOdpoved);
                                                     telefon.setImageResource(R.drawable.notelefon);
                                                     startActivityForResult(intent3,331);
                                                     telefonB=true;
@@ -487,19 +501,19 @@ public class gameCore extends Activity {
                                            if (event.getAction() == MotionEvent.ACTION_DOWN) {
                                                if(padesatNaPadesatB) return false;
                                                else{
-                                                    if(spravnaOdpoved%6==1){
+                                                    if(spravnaOdpoved==1){
                                                         b.setText("");
                                                         c.setText("");
                                                     }
-                                                   else if(spravnaOdpoved%6==2){
+                                                   else if(spravnaOdpoved==2){
                                                        a.setText("");
                                                        c.setText("");
                                                    }
-                                                   else if(spravnaOdpoved%6==3){
+                                                   else if(spravnaOdpoved==3){
                                                        b.setText("");
                                                        d.setText("");
                                                    }
-                                                   else if(spravnaOdpoved%6==4){
+                                                   else if(spravnaOdpoved==4){
                                                        b.setText("");
                                                        c.setText("");
                                                    }
@@ -526,10 +540,10 @@ public class gameCore extends Activity {
         String[] otazky={};
         Random r = new Random();
         Log.d("score:",""+score);
-        if(score<=10000){
+        if(score<=5000){
             otazky=otazky_easy;
         }
-        else if (score>10000&&score<=250000){
+        else if (score>5000&&score<=100000){
             otazky=otazky_medium;
         }
         else{
@@ -537,42 +551,28 @@ public class gameCore extends Activity {
         }
         int tmp = r.nextInt(otazky.length);
 
-
-        int zbytek = tmp%6;
+        int zbytek = tmp%5;
         randomCislo = tmp-zbytek;
 
-        for(int i=randomCislo;i<randomCislo+6;i++){
-           if(otazky[i]=="-") {
-               spravnaOdpoved=i-1;
-           }
+        if(score<=5000){
+            spravnaOdpoved=odpovedi_easy[randomCislo/5];
         }
+        else if (score>5000&&score<=100000){
+            spravnaOdpoved=odpovedi_medium[randomCislo/5];
+        }
+        else{
+            spravnaOdpoved=odpovedi_hard[randomCislo/5];
+        }
+
 
         otazka.setText(otazky[randomCislo]);
 
-        if(otazky[randomCislo+2]=="-"){
-            a.setText("(a) "+otazky[randomCislo+1]);
-            b.setText("(b) "+otazky[randomCislo+3]);
-            c.setText("(c) "+otazky[randomCislo+4]);
-            d.setText("(d) "+otazky[randomCislo+5]);
-        }
-        else if(otazky[randomCislo+3]=="-"){
-            a.setText("(a) "+otazky[randomCislo+1]);
-            b.setText("(b) "+otazky[randomCislo+2]);
-            c.setText("(c) "+otazky[randomCislo+4]);
-            d.setText("(d) "+otazky[randomCislo+5]);
-        }
-        else if(otazky[randomCislo+4]=="-"){
-            a.setText("(a) "+otazky[randomCislo+1]);
-            b.setText("(b) "+otazky[randomCislo+2]);
-            c.setText("(c) "+otazky[randomCislo+3]);
-            d.setText("(d) "+otazky[randomCislo+5]);
-        }
-        else{
-            a.setText("(a) "+otazky[randomCislo+1]);
-            b.setText("(b) "+otazky[randomCislo+2]);
-            c.setText("(c) "+otazky[randomCislo+3]);
-            d.setText("(d) "+otazky[randomCislo+4]);
-        }
+
+        a.setText("(a) "+otazky[randomCislo+1]);
+        b.setText("(b) "+otazky[randomCislo+2]);
+        c.setText("(c) "+otazky[randomCislo+3]);
+        d.setText("(d) "+otazky[randomCislo+4]);
+
 
     }
     @Override
@@ -642,3 +642,4 @@ public class gameCore extends Activity {
 
 
 }
+

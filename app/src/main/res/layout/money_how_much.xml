@@ -56,9 +56,9 @@
         android:layout_width="213dp"
         android:layout_height="53dp"
         android:layout_marginStart="164dp"
-        android:background="@drawable/button_background_main"
+        android:background="@drawable/yellow"
         android:text="100.000"
-        android:textColor="#fff"
+        android:textColor="@color/BLACK"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/b250.000" />
 
@@ -100,9 +100,9 @@
         android:layout_width="213dp"
         android:layout_height="53dp"
         android:layout_marginStart="164dp"
-        android:background="@drawable/button_background_main"
+        android:background="@drawable/yellow"
         android:text="5.000"
-        android:textColor="#fff"
+        android:textColor="@color/BLACK"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/b10.000" />
 
