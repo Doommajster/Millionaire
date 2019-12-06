@@ -108,7 +108,7 @@ public class end extends Activity {
         } catch (TwitterException e) {
             // TODO Auto-generated catch block
             // oops
-            Toast.makeText(this, "Error", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Error s nahráním na twitter", Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
     }
