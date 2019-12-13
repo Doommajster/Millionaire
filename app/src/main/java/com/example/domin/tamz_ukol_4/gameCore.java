@@ -13,6 +13,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -31,13 +32,14 @@ public class gameCore extends Activity {
     private CountDownTimer CDT;
     private TextView otazka,time;
     public int score=0,casVMS=60000;
-    public int life=1;
+    public int life=1,progress2=20;
     public boolean publikumB=false,telefonB=false,padesatNaPadesatB=false,timmerRunning=false;
     public int randomCislo=0,spravnaOdpoved=0,increment=0;
     public ImageView padesatNaPadesat;
     public ImageView telefon;
     public ImageView publikum;
     public MediaPlayer player;
+    public ProgressBar circle;
 
     int maxVolume = 50,currVolume=50,cekej=1000;
     float log1=(float)(Math.log(maxVolume-currVolume)/Math.log(maxVolume));
@@ -47,7 +49,7 @@ public class gameCore extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gamecore);
         player = MediaPlayer.create(this, R.raw.starthry);
-        Log.d("asdfdsa",otazky.otazky.getOtazky_easy()[0]);
+        circle = findViewById(R.id.progressBar);
         a=findViewById(R.id.button1);
         b=findViewById(R.id.button2);
         c=findViewById(R.id.button3);
@@ -58,6 +60,7 @@ public class gameCore extends Activity {
         publikum = findViewById(R.id.publikum);
         time=findViewById(R.id.time);
         final SharedPreferences sharedPreferences=getSharedPreferences("zvuk", Context.MODE_PRIVATE);
+        circle.setProgress(100);
         a.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(final View v){
@@ -419,7 +422,15 @@ public class gameCore extends Activity {
 
         int minutes= (int) casVMS/60000;
         int seconds = (int) casVMS % 60000 / 1000;
-        //Log.d("zidan",""+casVMS);
+        int progress =100-2*(60-seconds);
+         Log.d("progress",""+progress);
+        if(progress<=20){
+            circle.setProgress(progress2--);
+
+        }
+        else
+            circle.setProgress(progress);
+
         String timeLeftText;
         timeLeftText= "" + minutes;
         timeLeftText += ":";

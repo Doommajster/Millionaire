@@ -23,8 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="76dp"
             android:layout_weight="1"
-            android:background="@drawable/persononphone"
-            android:text="TextView" />
+            android:background="@drawable/persononphone" />
 
         <LinearLayout
             android:layout_width="wrap_content"
