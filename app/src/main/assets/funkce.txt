@@ -1,0 +1,10 @@
+- listy a switch (gui)*
+- zvuky*
+- sharedpreferences*
+- DB*
+- animace*
+- timer*
+- xml parser a internet *
+- thready*
+- twitter*
+- notifikace
