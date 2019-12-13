@@ -36,7 +36,7 @@
         android:id="@+id/aboutText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="264dp"
+        android:layout_marginStart="228dp"
         android:layout_marginTop="696dp"
         android:text="Author: Dominik Holaň"
         android:textColor="#fff"
@@ -56,9 +56,9 @@
 
     <Button
         android:id="@+id/high_score"
-        android:layout_width="112dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="148dp"
+        android:layout_width="111dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="152dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/standartbutton"
         android:text="Nejvyšší skóre"

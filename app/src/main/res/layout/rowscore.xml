@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/datum"
         android:layout_width="match_parent"
-        android:layout_height="34dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/sqlradek"
         android:gravity="center"
         android:textColor="@android:color/white" />
