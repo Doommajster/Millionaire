@@ -4,8 +4,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="TAMZ2"
+        android:icon="@drawable/logo_main"
+        android:label="Millionaire"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="com.example.domin.tamz_ukol_4.Menu">

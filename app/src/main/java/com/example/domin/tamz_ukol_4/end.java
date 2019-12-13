@@ -1,12 +1,18 @@
 package com.example.domin.tamz_ukol_4;
 
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -22,6 +28,7 @@ import twitter4j.conf.ConfigurationBuilder;
 
 public class end extends Activity {
 
+    private static final String CHANNEL_1_ID = "channel1";
     TextView win;
     Button menu;
     int score=0;
@@ -57,11 +64,13 @@ public class end extends Activity {
         score=i.getIntExtra("score",0);
         if(score==-1){
             win.setText("Bohužel to tentokrát nevyšlo, ale můžeš to zkusit znovu.");
+            addNotification("Bohužel to tentokrát nevyšlo, ale můžeš to zkusit znovu.");
         }
         else if(score != 0 && score!=1000000){
             win.setText("Gratuluji vyhrál si: " +score+ " Kč");
             Sqldatabase SQL = new Sqldatabase(this);
             SQL.addScore(score,""+ Calendar.getInstance().getTime());
+            addNotification("Gratuluji vyhrál si: " +score+ " Kč");
             if (sharedPreferences.getString("zvuk", "").equals("ok")) {
 
                 player.start();
@@ -71,6 +80,7 @@ public class end extends Activity {
             win.setText("Stáváš se novým milionářem!!");
             Sqldatabase SQL = new Sqldatabase(this);
             SQL.addScore(score,""+ Calendar.getInstance().getTime());
+            addNotification("Stáváš se novým milionářem!!");
             if (sharedPreferences.getString("zvuk", "").equals("ok")) {
 
                 player.start();
@@ -79,6 +89,7 @@ public class end extends Activity {
         else
         {
             win.setText("Chyba ve výpočtu skóre!!!");
+            addNotification("Chyba ve výpočtu skóre!!!");
         }
 
     }
@@ -89,6 +100,30 @@ public class end extends Activity {
               player.stop();
         }
     }
+    private void addNotification(String text) {
+        // vytvoreni notifikace
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel1 = new NotificationChannel(
+                    CHANNEL_1_ID,
+                    "Channel 1",
+                    NotificationManager.IMPORTANCE_HIGH
+            );
+            channel1.setDescription("This is Channel 1");
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel1);
+        }
+        Notification notification = new NotificationCompat.Builder(this, CHANNEL_1_ID)
+                .setSmallIcon(R.drawable.logo_main)
+                .setContentTitle("Milionář: Hra byla dokončena.")
+                .setContentText(text)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+
+        notificationManager.notify(1, notification);
+    }
+
     public void configureTwitter() {
         ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true)
