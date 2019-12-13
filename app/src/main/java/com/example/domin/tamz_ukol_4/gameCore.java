@@ -64,7 +64,7 @@ public class gameCore extends Activity {
                 Handler handler = new Handler();
                 if(spravnaOdpoved==1){
                     if(score==1000000){
-                        a.setBackground(getDrawable(R.drawable.greenbackground));
+                        a.setBackground(getDrawable(R.drawable.correctanswerbutton));
 
                         CDT.cancel();
 
@@ -89,7 +89,7 @@ public class gameCore extends Activity {
                     else{
                         score=money[increment];
                         increment++;
-                        a.setBackground(getDrawable(R.drawable.greenbackground));
+                        a.setBackground(getDrawable(R.drawable.correctanswerbutton));
                         CDT.cancel();
                         if(sharedPreferences.getString("zvuk","").equals("ok"))
                         {
@@ -111,7 +111,7 @@ public class gameCore extends Activity {
 
                 }
                 else{
-                    a.setBackground(getDrawable(R.drawable.red_background));
+                    a.setBackground(getDrawable(R.drawable.badanswerbutton));
                     life-=1;
                     if(sharedPreferences.getString("zvuk","").equals("ok"))
                     {
@@ -145,7 +145,7 @@ public class gameCore extends Activity {
                 Handler handler = new Handler();
                 if(spravnaOdpoved==2){
                     if(score==1000000){
-                        b.setBackground(getDrawable(R.drawable.greenbackground));
+                        b.setBackground(getDrawable(R.drawable.correctanswerbutton));
 
                         CDT.cancel();
                         if(sharedPreferences.getString("zvuk","").equals("ok"))
@@ -168,7 +168,7 @@ public class gameCore extends Activity {
                     else{
                         score=money[increment];
                         increment++;
-                        b.setBackground(getDrawable(R.drawable.greenbackground));
+                        b.setBackground(getDrawable(R.drawable.correctanswerbutton));
 
                         CDT.cancel();
                         if(sharedPreferences.getString("zvuk","").equals("ok"))
@@ -190,7 +190,7 @@ public class gameCore extends Activity {
                     }
                 }
                 else{
-                    b.setBackground(getDrawable(R.drawable.red_background));
+                    b.setBackground(getDrawable(R.drawable.badanswerbutton));
                     life-=1;
                     if(sharedPreferences.getString("zvuk","").equals("ok"))
                     {
@@ -223,7 +223,7 @@ public class gameCore extends Activity {
                 Handler handler = new Handler();
                 if(spravnaOdpoved==3){
                     if(score==1000000){
-                        c.setBackground(getDrawable(R.drawable.greenbackground));
+                        c.setBackground(getDrawable(R.drawable.correctanswerbutton));
 
                         CDT.cancel();
                         if(sharedPreferences.getString("zvuk","").equals("ok"))
@@ -246,7 +246,7 @@ public class gameCore extends Activity {
                     else{
                         score=money[increment];
                         increment++;
-                        c.setBackground(getDrawable(R.drawable.greenbackground));
+                        c.setBackground(getDrawable(R.drawable.correctanswerbutton));
 
                         CDT.cancel();
                         if(sharedPreferences.getString("zvuk","").equals("ok"))
@@ -268,7 +268,7 @@ public class gameCore extends Activity {
                     }
                 }
                 else{
-                    c.setBackground(getDrawable(R.drawable.red_background));
+                    c.setBackground(getDrawable(R.drawable.badanswerbutton));
                     life-=1;
 
                     if(sharedPreferences.getString("zvuk","").equals("ok"))
@@ -302,7 +302,7 @@ public class gameCore extends Activity {
                 Handler handler = new Handler();
                 if(spravnaOdpoved==4){
                     if(score==1000000){
-                        d.setBackground(getDrawable(R.drawable.greenbackground));
+                        d.setBackground(getDrawable(R.drawable.correctanswerbutton));
 
                         CDT.cancel();
                         if(sharedPreferences.getString("zvuk","").equals("ok"))
@@ -326,7 +326,7 @@ public class gameCore extends Activity {
                     else{
                         score=money[increment];
                         increment++;
-                        d.setBackground(getDrawable(R.drawable.greenbackground));
+                        d.setBackground(getDrawable(R.drawable.correctanswerbutton));
 
                         CDT.cancel();
                         if(sharedPreferences.getString("zvuk","").equals("ok"))
@@ -349,7 +349,7 @@ public class gameCore extends Activity {
 
                 }
                 else{
-                    d.setBackground(getDrawable(R.drawable.red_background));
+                    d.setBackground(getDrawable(R.drawable.badanswerbutton));
                     life-=1;
                     if(sharedPreferences.getString("zvuk","").equals("ok"))
                     {
@@ -444,10 +444,10 @@ public class gameCore extends Activity {
 
     public void startGame(){
 
-        a.setBackground(getDrawable(R.drawable.button_background_main));
-        b.setBackground(getDrawable(R.drawable.button_background_main));
-        c.setBackground(getDrawable(R.drawable.button_background_main));
-        d.setBackground(getDrawable(R.drawable.button_background_main));
+        a.setBackground(getDrawable(R.drawable.standartbutton));
+        b.setBackground(getDrawable(R.drawable.standartbutton));
+        c.setBackground(getDrawable(R.drawable.standartbutton));
+        d.setBackground(getDrawable(R.drawable.standartbutton));
 
            publikum.setOnTouchListener(new View.OnTouchListener() {
                                             @Override

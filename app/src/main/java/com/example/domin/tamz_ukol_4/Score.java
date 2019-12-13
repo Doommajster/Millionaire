@@ -47,7 +47,7 @@ public class Score extends Activity {
         Intent intent = getIntent();
         score=intent.getIntExtra("score",0);
         if(score==500){
-            b500.setBackground(getDrawable(R.drawable.orange_background));
+            b500.setBackground(getDrawable(R.drawable.orangepressed));
             b500.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
@@ -57,7 +57,7 @@ public class Score extends Activity {
             });
         }
         if(score==1000){
-            b1000.setBackground(getDrawable(R.drawable.orange_background));
+            b1000.setBackground(getDrawable(R.drawable.orangepressed));
             b1000.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
@@ -67,7 +67,7 @@ public class Score extends Activity {
             });
         }
         if(score==2000){
-            b2000.setBackground(getDrawable(R.drawable.orange_background));
+            b2000.setBackground(getDrawable(R.drawable.orangepressed));
             b2000.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
@@ -77,7 +77,7 @@ public class Score extends Activity {
             });
         }
         if(score==5000){
-            b5000.setBackground(getDrawable(R.drawable.orange_background));
+            b5000.setBackground(getDrawable(R.drawable.orangepressed));
             b5000.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
@@ -87,7 +87,7 @@ public class Score extends Activity {
             });
         }
         if(score==10000){
-            b10000.setBackground(getDrawable(R.drawable.orange_background));
+            b10000.setBackground(getDrawable(R.drawable.orangepressed));
             b10000.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
@@ -97,7 +97,7 @@ public class Score extends Activity {
             });
         }
         if(score==25000){
-            b25000.setBackground(getDrawable(R.drawable.orange_background));
+            b25000.setBackground(getDrawable(R.drawable.orangepressed));
             b25000.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
@@ -107,7 +107,7 @@ public class Score extends Activity {
             });
         }
         if(score==50000){
-            b50000.setBackground(getDrawable(R.drawable.orange_background));
+            b50000.setBackground(getDrawable(R.drawable.orangepressed));
             b50000.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
@@ -117,7 +117,7 @@ public class Score extends Activity {
             });
         }
         if(score==100000){
-            b100000.setBackground(getDrawable(R.drawable.orange_background));
+            b100000.setBackground(getDrawable(R.drawable.orangepressed));
             b100000.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
@@ -127,7 +127,7 @@ public class Score extends Activity {
             });
         }
         if(score==250000){
-            b250000.setBackground(getDrawable(R.drawable.orange_background));
+            b250000.setBackground(getDrawable(R.drawable.orangepressed));
             b250000.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
@@ -137,7 +137,7 @@ public class Score extends Activity {
             });
         }
         if(score==500000){
-            b500000.setBackground(getDrawable(R.drawable.orange_background));
+            b500000.setBackground(getDrawable(R.drawable.orangepressed));
             b500000.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
@@ -147,7 +147,7 @@ public class Score extends Activity {
             });
         }
         if(score==750000){
-            b750000.setBackground(getDrawable(R.drawable.orange_background));
+            b750000.setBackground(getDrawable(R.drawable.orangepressed));
             b750000.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
@@ -157,7 +157,7 @@ public class Score extends Activity {
             });
         }
         if(score==1000000){
-            b1000000.setBackground(getDrawable(R.drawable.orange_background));
+            b1000000.setBackground(getDrawable(R.drawable.orangepressed));
             b1000000.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
