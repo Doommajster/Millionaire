@@ -64,6 +64,9 @@ public class gameCore extends Activity {
         a.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(final View v){
+                b.setOnClickListener(null);
+                c.setOnClickListener(null);
+                d.setOnClickListener(null);
                 Handler handler = new Handler();
                 if(spravnaOdpoved==1){
                     if(score==1000000){
@@ -145,6 +148,9 @@ public class gameCore extends Activity {
         b.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(final View v){
+                a.setOnClickListener(null);
+                c.setOnClickListener(null);
+                d.setOnClickListener(null);
                 Handler handler = new Handler();
                 if(spravnaOdpoved==2){
                     if(score==1000000){
@@ -223,6 +229,9 @@ public class gameCore extends Activity {
         c.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(final View v){
+                b.setOnClickListener(null);
+                a.setOnClickListener(null);
+                d.setOnClickListener(null);
                 Handler handler = new Handler();
                 if(spravnaOdpoved==3){
                     if(score==1000000){
@@ -302,6 +311,9 @@ public class gameCore extends Activity {
         d.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(final View v){
+                b.setOnClickListener(null);
+                c.setOnClickListener(null);
+                a.setOnClickListener(null);
                 Handler handler = new Handler();
                 if(spravnaOdpoved==4){
                     if(score==1000000){
