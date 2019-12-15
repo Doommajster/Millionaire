@@ -374,8 +374,8 @@ public class gameCore extends Activity {
                                 },cekej);
                             }
                             else{
-                                score=money[increment];
                                 increment++;
+                                score=money[increment];
                                 a.setBackground(getDrawable(R.drawable.correctanswerbutton));
                                 CDT.cancel();
                                 if(sharedPreferences.getString("zvuk","").equals("ok"))
@@ -467,8 +467,8 @@ public class gameCore extends Activity {
                                 },cekej);
                             }
                             else{
-                                score=money[increment];
                                 increment++;
+                                score=money[increment];
                                 b.setBackground(getDrawable(R.drawable.correctanswerbutton));
                                 CDT.cancel();
                                 if(sharedPreferences.getString("zvuk","").equals("ok"))
@@ -560,8 +560,8 @@ public class gameCore extends Activity {
                                 },cekej);
                             }
                             else{
-                                score=money[increment];
                                 increment++;
+                                score=money[increment];
                                 c.setBackground(getDrawable(R.drawable.correctanswerbutton));
                                 CDT.cancel();
                                 if(sharedPreferences.getString("zvuk","").equals("ok"))
@@ -654,8 +654,8 @@ public class gameCore extends Activity {
                                 },cekej);
                             }
                             else{
-                                score=money[increment];
                                 increment++;
+                                score=money[increment];
                                 d.setBackground(getDrawable(R.drawable.correctanswerbutton));
                                 CDT.cancel();
                                 if(sharedPreferences.getString("zvuk","").equals("ok"))
