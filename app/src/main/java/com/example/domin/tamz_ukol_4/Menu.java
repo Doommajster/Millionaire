@@ -245,7 +245,7 @@ public class Menu extends Activity {
 
             if(questions[0]==null){
                 pDialog = new ProgressDialog(Menu.this);
-                pDialog.setTitle("Chyba při načítání dat z webu, zkuste aplikaci zapnout znovu");
+                pDialog.setTitle("Chyba při načítání dat z webu, zkuste aplikaci zapnout znovu s internetovým připojením");
                 pDialog.setMessage("Error");
                 pDialog.show();
             }

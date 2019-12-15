@@ -342,79 +342,88 @@ public class gameCore extends Activity {
                 b.setOnClickListener(null);
                 c.setOnClickListener(null);
                 d.setOnClickListener(null);
-                Handler handler = new Handler();
-                if(spravnaOdpoved==1){
-                    if(score==1000000){
-                        a.setBackground(getDrawable(R.drawable.correctanswerbutton));
+                final Handler handler = new Handler();
+                Handler handler1 = new Handler();
+                a.setBackground(getDrawable(R.drawable.orangepressed));
+                CDT.cancel();
+                handler1.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(spravnaOdpoved==1){
+                            if(score==1000000){
+                                a.setBackground(getDrawable(R.drawable.correctanswerbutton));
 
-                        CDT.cancel();
-
-                        if(sharedPreferences.getString("zvuk","").equals("ok"))
-                        {
-                            player.stop();
-                            player=MediaPlayer.create(getBaseContext(),R.raw.spravna);
-                            player.start();
-                        }
-
-                        handler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                player.stop();
-                                Intent intent1=new Intent(v.getContext(),end.class);
-                                intent1.putExtra("score",score);
-                                startActivity(intent1);
-
-                            }
-                        },cekej);
-                    }
-                    else{
-                        score=money[increment];
-                        increment++;
-                        a.setBackground(getDrawable(R.drawable.correctanswerbutton));
-                        CDT.cancel();
-                        if(sharedPreferences.getString("zvuk","").equals("ok"))
-                        {
-                            player.stop();
-                            player=MediaPlayer.create(getBaseContext(),R.raw.spravna);
-                            player.start();
-                        }
-                        handler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                player.stop();
-                                Intent intent1=new Intent(v.getContext(),Score.class);
-                                intent1.putExtra("score",score);
-                                startActivityForResult(intent1,333);
-
-                            }
-                        },cekej);
-                    }
-
-                }
-                else{
-                    a.setBackground(getDrawable(R.drawable.badanswerbutton));
-                    life-=1;
-                    if(sharedPreferences.getString("zvuk","").equals("ok"))
-                    {
-                        player.stop();
-                        player=MediaPlayer.create(getBaseContext(),R.raw.spatna);
-                        player.start();
-                    }
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            if (life == 0) {
-                                player.stop();
                                 CDT.cancel();
-                                Intent i = new Intent(v.getContext(), end.class);
-                                if(score >=5000 && score <100000) i.putExtra("score", 5000);
-                                else if (score >=100000 && score <=1000000) i.putExtra("score", 100000);
-                                else i.putExtra("score",-1);
-                                startActivity(i);
+
+                                if(sharedPreferences.getString("zvuk","").equals("ok"))
+                                {
+                                    player.stop();
+                                    player=MediaPlayer.create(getBaseContext(),R.raw.spravna);
+                                    player.start();
+                                }
+
+                                handler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        player.stop();
+                                        Intent intent1=new Intent(v.getContext(),end.class);
+                                        intent1.putExtra("score",score);
+                                        startActivity(intent1);
+
+                                    }
+                                },cekej);
                             }
+                            else{
+                                score=money[increment];
+                                increment++;
+                                a.setBackground(getDrawable(R.drawable.correctanswerbutton));
+                                CDT.cancel();
+                                if(sharedPreferences.getString("zvuk","").equals("ok"))
+                                {
+                                    player.stop();
+                                    player=MediaPlayer.create(getBaseContext(),R.raw.spravna);
+                                    player.start();
+                                }
+                                handler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        player.stop();
+                                        Intent intent1=new Intent(v.getContext(),Score.class);
+                                        intent1.putExtra("score",score);
+                                        startActivityForResult(intent1,333);
+
+                                    }
+                                },cekej);
+                            }
+
                         }
-                    },cekej);
-                }
+                        else{
+                            a.setBackground(getDrawable(R.drawable.badanswerbutton));
+                            life-=1;
+                            if(sharedPreferences.getString("zvuk","").equals("ok"))
+                            {
+                                player.stop();
+                                player=MediaPlayer.create(getBaseContext(),R.raw.spatna);
+                                player.start();
+                            }
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    if (life == 0) {
+                                        player.stop();
+                                        CDT.cancel();
+                                        Intent i = new Intent(v.getContext(), end.class);
+                                        if(score >=5000 && score <100000) i.putExtra("score", 5000);
+                                        else if (score >=100000 && score <=1000000) i.putExtra("score", 100000);
+                                        else i.putExtra("score",-1);
+                                        startActivity(i);
+                                    }
+                                }
+                            },cekej);
+                        }
+                    }
+                },2000);
+
 
             }
 
@@ -426,246 +435,280 @@ public class gameCore extends Activity {
                 a.setOnClickListener(null);
                 c.setOnClickListener(null);
                 d.setOnClickListener(null);
-                Handler handler = new Handler();
-                if(spravnaOdpoved==2){
-                    if(score==1000000){
-                        b.setBackground(getDrawable(R.drawable.correctanswerbutton));
+                final Handler handler = new Handler();
+                Handler handler1 = new Handler();
+                b.setBackground(getDrawable(R.drawable.orangepressed));
+                CDT.cancel();
+                handler1.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(spravnaOdpoved==2){
+                            if(score==1000000){
+                                b.setBackground(getDrawable(R.drawable.correctanswerbutton));
 
-                        CDT.cancel();
-                        if(sharedPreferences.getString("zvuk","").equals("ok"))
-                        {
-                            player.stop();
-                            player=MediaPlayer.create(getBaseContext(),R.raw.spravna);
-                            player.start();
-                        }
-                        handler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                player.stop();
-                                Intent intent1=new Intent(v.getContext(),end.class);
-                                intent1.putExtra("score",score);
-                                startActivity(intent1);
-
-                            }
-                        },cekej);
-                    }
-                    else{
-                        score=money[increment];
-                        increment++;
-                        b.setBackground(getDrawable(R.drawable.correctanswerbutton));
-
-                        CDT.cancel();
-                        if(sharedPreferences.getString("zvuk","").equals("ok"))
-                        {
-                            player.stop();
-                            player=MediaPlayer.create(getBaseContext(),R.raw.spravna);
-                            player.start();
-                        }
-                        handler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                player.stop();
-                                Intent intent1=new Intent(v.getContext(),Score.class);
-                                intent1.putExtra("score",score);
-                                startActivityForResult(intent1,333);
-
-                            }
-                        },cekej);
-                    }
-                }
-                else{
-                    b.setBackground(getDrawable(R.drawable.badanswerbutton));
-                    life-=1;
-                    if(sharedPreferences.getString("zvuk","").equals("ok"))
-                    {
-                        player.stop();
-                        player=MediaPlayer.create(getBaseContext(),R.raw.spatna);
-                        player.start();
-                    }
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            if (life == 0) {
-                                player.stop();
                                 CDT.cancel();
-                                Intent i = new Intent(v.getContext(), end.class);
-                                if(score >=5000 && score <100000) i.putExtra("score", 5000);
-                                else if (score >=100000 && score <=1000000) i.putExtra("score", 100000);
-                                else i.putExtra("score",-1);
-                                startActivity(i);
+
+                                if(sharedPreferences.getString("zvuk","").equals("ok"))
+                                {
+                                    player.stop();
+                                    player=MediaPlayer.create(getBaseContext(),R.raw.spravna);
+                                    player.start();
+                                }
+
+                                handler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        player.stop();
+                                        Intent intent1=new Intent(v.getContext(),end.class);
+                                        intent1.putExtra("score",score);
+                                        startActivity(intent1);
+
+                                    }
+                                },cekej);
                             }
+                            else{
+                                score=money[increment];
+                                increment++;
+                                b.setBackground(getDrawable(R.drawable.correctanswerbutton));
+                                CDT.cancel();
+                                if(sharedPreferences.getString("zvuk","").equals("ok"))
+                                {
+                                    player.stop();
+                                    player=MediaPlayer.create(getBaseContext(),R.raw.spravna);
+                                    player.start();
+                                }
+                                handler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        player.stop();
+                                        Intent intent1=new Intent(v.getContext(),Score.class);
+                                        intent1.putExtra("score",score);
+                                        startActivityForResult(intent1,333);
+
+                                    }
+                                },cekej);
+                            }
+
                         }
-                    },cekej);
-                }
+                        else{
+                            b.setBackground(getDrawable(R.drawable.badanswerbutton));
+                            life-=1;
+                            if(sharedPreferences.getString("zvuk","").equals("ok"))
+                            {
+                                player.stop();
+                                player=MediaPlayer.create(getBaseContext(),R.raw.spatna);
+                                player.start();
+                            }
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    if (life == 0) {
+                                        player.stop();
+                                        CDT.cancel();
+                                        Intent i = new Intent(v.getContext(), end.class);
+                                        if(score >=5000 && score <100000) i.putExtra("score", 5000);
+                                        else if (score >=100000 && score <=1000000) i.putExtra("score", 100000);
+                                        else i.putExtra("score",-1);
+                                        startActivity(i);
+                                    }
+                                }
+                            },cekej);
+                        }
+                    }
+                },2000);
+
 
             }
+
         });
 
         c.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(final View v){
-                b.setOnClickListener(null);
                 a.setOnClickListener(null);
+                b.setOnClickListener(null);
                 d.setOnClickListener(null);
-                Handler handler = new Handler();
-                if(spravnaOdpoved==3){
-                    if(score==1000000){
-                        c.setBackground(getDrawable(R.drawable.correctanswerbutton));
+                final Handler handler = new Handler();
+                Handler handler1 = new Handler();
+                c.setBackground(getDrawable(R.drawable.orangepressed));
+                CDT.cancel();
+                handler1.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(spravnaOdpoved==3){
+                            if(score==1000000){
+                                c.setBackground(getDrawable(R.drawable.correctanswerbutton));
 
-                        CDT.cancel();
-                        if(sharedPreferences.getString("zvuk","").equals("ok"))
-                        {
-                            player.stop();
-                            player=MediaPlayer.create(getBaseContext(),R.raw.spravna);
-                            player.start();
-                        }
-                        handler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                player.stop();
-                                Intent intent1=new Intent(v.getContext(),end.class);
-                                intent1.putExtra("score",score);
-                                startActivity(intent1);
-
-                            }
-                        },cekej);
-                    }
-                    else{
-                        score=money[increment];
-                        increment++;
-                        c.setBackground(getDrawable(R.drawable.correctanswerbutton));
-
-                        CDT.cancel();
-                        if(sharedPreferences.getString("zvuk","").equals("ok"))
-                        {
-                            player.stop();
-                            player=MediaPlayer.create(getBaseContext(),R.raw.spravna);
-                            player.start();
-                        }
-                        handler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                player.stop();
-                                Intent intent1=new Intent(v.getContext(),Score.class);
-                                intent1.putExtra("score",score);
-                                startActivityForResult(intent1,333);
-
-                            }
-                        },cekej);
-                    }
-                }
-                else{
-                    c.setBackground(getDrawable(R.drawable.badanswerbutton));
-                    life-=1;
-
-                    if(sharedPreferences.getString("zvuk","").equals("ok"))
-                    {
-                        player.stop();
-                        player=MediaPlayer.create(getBaseContext(),R.raw.spatna);
-                        player.start();
-                    }
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            if (life == 0) {
-                                player.stop();
                                 CDT.cancel();
-                                Intent i = new Intent(v.getContext(), end.class);
-                                if(score >=5000 && score <100000) i.putExtra("score", 5000);
-                                else if (score >=100000 && score <=1000000) i.putExtra("score", 100000);
-                                else i.putExtra("score",-1);
-                                startActivity(i);
+
+                                if(sharedPreferences.getString("zvuk","").equals("ok"))
+                                {
+                                    player.stop();
+                                    player=MediaPlayer.create(getBaseContext(),R.raw.spravna);
+                                    player.start();
+                                }
+
+                                handler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        player.stop();
+                                        Intent intent1=new Intent(v.getContext(),end.class);
+                                        intent1.putExtra("score",score);
+                                        startActivity(intent1);
+
+                                    }
+                                },cekej);
                             }
+                            else{
+                                score=money[increment];
+                                increment++;
+                                c.setBackground(getDrawable(R.drawable.correctanswerbutton));
+                                CDT.cancel();
+                                if(sharedPreferences.getString("zvuk","").equals("ok"))
+                                {
+                                    player.stop();
+                                    player=MediaPlayer.create(getBaseContext(),R.raw.spravna);
+                                    player.start();
+                                }
+                                handler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        player.stop();
+                                        Intent intent1=new Intent(v.getContext(),Score.class);
+                                        intent1.putExtra("score",score);
+                                        startActivityForResult(intent1,333);
+
+                                    }
+                                },cekej);
+                            }
+
                         }
-                    },cekej);
-                }
+                        else{
+                            c.setBackground(getDrawable(R.drawable.badanswerbutton));
+                            life-=1;
+                            if(sharedPreferences.getString("zvuk","").equals("ok"))
+                            {
+                                player.stop();
+                                player=MediaPlayer.create(getBaseContext(),R.raw.spatna);
+                                player.start();
+                            }
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    if (life == 0) {
+                                        player.stop();
+                                        CDT.cancel();
+                                        Intent i = new Intent(v.getContext(), end.class);
+                                        if(score >=5000 && score <100000) i.putExtra("score", 5000);
+                                        else if (score >=100000 && score <=1000000) i.putExtra("score", 100000);
+                                        else i.putExtra("score",-1);
+                                        startActivity(i);
+                                    }
+                                }
+                            },cekej);
+                        }
+                    }
+                },2000);
+
 
             }
+
         });
+
 
         d.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(final View v){
-                b.setOnClickListener(null);
-                c.setOnClickListener(null);
                 a.setOnClickListener(null);
-                Handler handler = new Handler();
-                if(spravnaOdpoved==4){
-                    if(score==1000000){
-                        d.setBackground(getDrawable(R.drawable.correctanswerbutton));
+                c.setOnClickListener(null);
+                b.setOnClickListener(null);
+                final Handler handler = new Handler();
+                Handler handler1 = new Handler();
+                d.setBackground(getDrawable(R.drawable.orangepressed));
+                CDT.cancel();
+                handler1.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(spravnaOdpoved==4){
+                            if(score==1000000){
+                                d.setBackground(getDrawable(R.drawable.correctanswerbutton));
 
-                        CDT.cancel();
-                        if(sharedPreferences.getString("zvuk","").equals("ok"))
-                        {
-
-                            player.stop();
-                            player=MediaPlayer.create(getBaseContext(),R.raw.spravna);
-                            player.start();
-                        }
-                        handler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                player.stop();
-                                Intent intent1=new Intent(v.getContext(),end.class);
-                                intent1.putExtra("score",score);
-                                startActivity(intent1);
-
-                            }
-                        },cekej);
-                    }
-                    else{
-                        score=money[increment];
-                        increment++;
-                        d.setBackground(getDrawable(R.drawable.correctanswerbutton));
-
-                        CDT.cancel();
-                        if(sharedPreferences.getString("zvuk","").equals("ok"))
-                        {
-                            player.stop();
-                            player=MediaPlayer.create(getBaseContext(),R.raw.spravna);
-                            player.start();
-                        }
-                        handler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                player.stop();
-                                Intent intent1=new Intent(v.getContext(),Score.class);
-                                intent1.putExtra("score",score);
-                                startActivityForResult(intent1,333);
-
-                            }
-                        },cekej);
-                    }
-
-                }
-                else{
-                    d.setBackground(getDrawable(R.drawable.badanswerbutton));
-                    life-=1;
-                    if(sharedPreferences.getString("zvuk","").equals("ok"))
-                    {
-                        player.stop();
-                        player=MediaPlayer.create(getBaseContext(),R.raw.spatna);
-                        player.start();
-                    }
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            if (life == 0) {
-                                player.stop();
                                 CDT.cancel();
-                                Intent i = new Intent(v.getContext(), end.class);
-                                if(score >=5000 && score <100000) i.putExtra("score", 5000);
-                                else if (score >=100000 && score <=1000000) i.putExtra("score", 100000);
-                                else i.putExtra("score",-1);
-                                startActivity(i);
+
+                                if(sharedPreferences.getString("zvuk","").equals("ok"))
+                                {
+                                    player.stop();
+                                    player=MediaPlayer.create(getBaseContext(),R.raw.spravna);
+                                    player.start();
+                                }
+
+                                handler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        player.stop();
+                                        Intent intent1=new Intent(v.getContext(),end.class);
+                                        intent1.putExtra("score",score);
+                                        startActivity(intent1);
+
+                                    }
+                                },cekej);
                             }
+                            else{
+                                score=money[increment];
+                                increment++;
+                                d.setBackground(getDrawable(R.drawable.correctanswerbutton));
+                                CDT.cancel();
+                                if(sharedPreferences.getString("zvuk","").equals("ok"))
+                                {
+                                    player.stop();
+                                    player=MediaPlayer.create(getBaseContext(),R.raw.spravna);
+                                    player.start();
+                                }
+                                handler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        player.stop();
+                                        Intent intent1=new Intent(v.getContext(),Score.class);
+                                        intent1.putExtra("score",score);
+                                        startActivityForResult(intent1,333);
+
+                                    }
+                                },cekej);
+                            }
+
                         }
-                    },cekej);
-                }
+                        else{
+                            d.setBackground(getDrawable(R.drawable.badanswerbutton));
+                            life-=1;
+                            if(sharedPreferences.getString("zvuk","").equals("ok"))
+                            {
+                                player.stop();
+                                player=MediaPlayer.create(getBaseContext(),R.raw.spatna);
+                                player.start();
+                            }
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    if (life == 0) {
+                                        player.stop();
+                                        CDT.cancel();
+                                        Intent i = new Intent(v.getContext(), end.class);
+                                        if(score >=5000 && score <100000) i.putExtra("score", 5000);
+                                        else if (score >=100000 && score <=1000000) i.putExtra("score", 100000);
+                                        else i.putExtra("score",-1);
+                                        startActivity(i);
+                                    }
+                                }
+                            },cekej);
+                        }
+                    }
+                },2000);
 
 
             }
+
         });
+
     }
 
 
