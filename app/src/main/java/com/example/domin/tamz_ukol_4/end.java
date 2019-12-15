@@ -66,6 +66,13 @@ public class end extends Activity {
             win.setText("Bohužel to tentokrát nevyšlo, ale můžeš to zkusit znovu.");
             addNotification("Bohužel to tentokrát nevyšlo, ale můžeš to zkusit znovu.");
         }
+        else if (score == 5001 || score ==100001){
+            win.setText("Bohužel si nevyhrál, ale zahránil tě záchytný bod a máš: " + (score-1) +" Kč");
+            Sqldatabase SQL = new Sqldatabase(this);
+            SQL.addScore(score,""+ Calendar.getInstance().getTime());
+            addNotification("Bohužel si nevyhrál, ale zahránil tě záchytný bod a máš:" + (score-1) +" Kč");
+
+        }
         else if(score != 0 && score!=1000000){
             win.setText("Gratuluji vyhrál si: " +score+ " Kč");
             Sqldatabase SQL = new Sqldatabase(this);

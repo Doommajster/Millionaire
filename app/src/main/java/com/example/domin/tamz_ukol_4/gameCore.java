@@ -413,8 +413,8 @@ public class gameCore extends Activity {
                                         player.stop();
                                         CDT.cancel();
                                         Intent i = new Intent(v.getContext(), end.class);
-                                        if(score >=5000 && score <100000) i.putExtra("score", 5000);
-                                        else if (score >=100000 && score <=1000000) i.putExtra("score", 100000);
+                                        if(score >=5000 && score <100000) i.putExtra("score", 5001);
+                                        else if (score >=100000 && score <=1000000) i.putExtra("score", 100001);
                                         else i.putExtra("score",-1);
                                         startActivity(i);
                                     }
@@ -506,8 +506,8 @@ public class gameCore extends Activity {
                                         player.stop();
                                         CDT.cancel();
                                         Intent i = new Intent(v.getContext(), end.class);
-                                        if(score >=5000 && score <100000) i.putExtra("score", 5000);
-                                        else if (score >=100000 && score <=1000000) i.putExtra("score", 100000);
+                                        if(score >=5000 && score <100000) i.putExtra("score", 5001);
+                                        else if (score >=100000 && score <=1000000) i.putExtra("score", 100001);
                                         else i.putExtra("score",-1);
                                         startActivity(i);
                                     }
@@ -599,8 +599,8 @@ public class gameCore extends Activity {
                                         player.stop();
                                         CDT.cancel();
                                         Intent i = new Intent(v.getContext(), end.class);
-                                        if(score >=5000 && score <100000) i.putExtra("score", 5000);
-                                        else if (score >=100000 && score <=1000000) i.putExtra("score", 100000);
+                                        if(score >=5000 && score <100000) i.putExtra("score", 5001);
+                                        else if (score >=100000 && score <=1000000) i.putExtra("score", 100001);
                                         else i.putExtra("score",-1);
                                         startActivity(i);
                                     }
@@ -693,8 +693,8 @@ public class gameCore extends Activity {
                                         player.stop();
                                         CDT.cancel();
                                         Intent i = new Intent(v.getContext(), end.class);
-                                        if(score >=5000 && score <100000) i.putExtra("score", 5000);
-                                        else if (score >=100000 && score <=1000000) i.putExtra("score", 100000);
+                                        if(score >=5000 && score <100000) i.putExtra("score", 5001);
+                                        else if (score >=100000 && score <=1000000) i.putExtra("score", 100001);
                                         else i.putExtra("score",-1);
                                         startActivity(i);
                                     }
