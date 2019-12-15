@@ -350,7 +350,7 @@ public class gameCore extends Activity {
                     @Override
                     public void run() {
                         if(spravnaOdpoved==1){
-                            if(score==1000000){
+                            if(score==750000){
                                 a.setBackground(getDrawable(R.drawable.correctanswerbutton));
 
                                 CDT.cancel();
@@ -367,15 +367,15 @@ public class gameCore extends Activity {
                                     public void run() {
                                         player.stop();
                                         Intent intent1=new Intent(v.getContext(),end.class);
-                                        intent1.putExtra("score",score);
+                                        intent1.putExtra("score",1000000);
                                         startActivity(intent1);
 
                                     }
                                 },cekej);
                             }
                             else{
-                                increment++;
                                 score=money[increment];
+                                increment++;
                                 a.setBackground(getDrawable(R.drawable.correctanswerbutton));
                                 CDT.cancel();
                                 if(sharedPreferences.getString("zvuk","").equals("ok"))
@@ -443,7 +443,7 @@ public class gameCore extends Activity {
                     @Override
                     public void run() {
                         if(spravnaOdpoved==2){
-                            if(score==1000000){
+                            if(score==750000){
                                 b.setBackground(getDrawable(R.drawable.correctanswerbutton));
 
                                 CDT.cancel();
@@ -460,15 +460,15 @@ public class gameCore extends Activity {
                                     public void run() {
                                         player.stop();
                                         Intent intent1=new Intent(v.getContext(),end.class);
-                                        intent1.putExtra("score",score);
+                                        intent1.putExtra("score",1000000);
                                         startActivity(intent1);
 
                                     }
                                 },cekej);
                             }
                             else{
-                                increment++;
                                 score=money[increment];
+                                increment++;
                                 b.setBackground(getDrawable(R.drawable.correctanswerbutton));
                                 CDT.cancel();
                                 if(sharedPreferences.getString("zvuk","").equals("ok"))
@@ -536,7 +536,7 @@ public class gameCore extends Activity {
                     @Override
                     public void run() {
                         if(spravnaOdpoved==3){
-                            if(score==1000000){
+                            if(score==750000){
                                 c.setBackground(getDrawable(R.drawable.correctanswerbutton));
 
                                 CDT.cancel();
@@ -553,15 +553,15 @@ public class gameCore extends Activity {
                                     public void run() {
                                         player.stop();
                                         Intent intent1=new Intent(v.getContext(),end.class);
-                                        intent1.putExtra("score",score);
+                                        intent1.putExtra("score",1000000);
                                         startActivity(intent1);
 
                                     }
                                 },cekej);
                             }
                             else{
-                                increment++;
                                 score=money[increment];
+                                increment++;
                                 c.setBackground(getDrawable(R.drawable.correctanswerbutton));
                                 CDT.cancel();
                                 if(sharedPreferences.getString("zvuk","").equals("ok"))
@@ -630,7 +630,7 @@ public class gameCore extends Activity {
                     @Override
                     public void run() {
                         if(spravnaOdpoved==4){
-                            if(score==1000000){
+                            if(score==750000){
                                 d.setBackground(getDrawable(R.drawable.correctanswerbutton));
 
                                 CDT.cancel();
@@ -647,15 +647,15 @@ public class gameCore extends Activity {
                                     public void run() {
                                         player.stop();
                                         Intent intent1=new Intent(v.getContext(),end.class);
-                                        intent1.putExtra("score",score);
+                                        intent1.putExtra("score",1000000);
                                         startActivity(intent1);
 
                                     }
                                 },cekej);
                             }
                             else{
-                                increment++;
                                 score=money[increment];
+                                increment++;
                                 d.setBackground(getDrawable(R.drawable.correctanswerbutton));
                                 CDT.cancel();
                                 if(sharedPreferences.getString("zvuk","").equals("ok"))
